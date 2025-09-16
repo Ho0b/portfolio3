@@ -1,22 +1,23 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
+import RenderCanvas from './components/3DCanvas'
 
 function App() {
 
-  let [isDark, setIsDark] = useState(true)
+  let isDark = useRef(true)
 
   function themeHandler() {
-    if (isDark == true) {
+    if (isDark.current == true) {
+      // alert("turn to light")
       document.getElementById("themeButton").classList.replace("moon", "sun")
       document.body.classList.add("light")
-      setIsDark(false)
-    } 
-    if (isDark == false) {
+      isDark.current = false
+    } else if (isDark.current == false) {
+      // alert("turn to dark")
       document.getElementById("themeButton").classList.replace("sun", "moon")
       document.body.classList.remove("light")
-      setIsDark(true)
+      isDark.current = true
     }
-
   }
 
   return (
@@ -27,6 +28,8 @@ function App() {
           <li><button id='themeButton' className='moon' onClick={themeHandler}></button></li>
         </ul>
       </nav>
+
+      <RenderCanvas/>
     </main>
   )
 }

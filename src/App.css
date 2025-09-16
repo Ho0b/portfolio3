@@ -6,6 +6,9 @@
 
 
     color-scheme: dark light;
+
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .light{
@@ -16,8 +19,11 @@
 }
 
 h1{
-    color: var(--accent);
-    font-size: 1.618rem;
+    color: var(--secondary);
+    font-size: 32px;
+    margin: 0;
+
+    transition: color 1s;
 }
 
 body{
@@ -31,28 +37,33 @@ body{
 main{
     padding: 0;
     margin: 0;
-    background-color: var(--secondary);
+    background-color: transparent;
     font-family: var(--font);
 
     transition: background-color 1s;
+}
+
+canvas{
+    height: 100vh;
+
 }
 
 #themeButton{
     @starting-style{
         opacity: 0;
     }
-
-    width: 48px;
-    height: 48px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
     border-radius: .5rem;
-    background-color: var(--primary);
+    background-color: transparent;
     border: 0px solid transparent;
     background-position: center;
     background-size: cover;
 }
 
 .sun{
-    background-color: var(--secondary);
+    background-blend-mode: lighten;
     background-image: url('../public/svgs/sun.svg');
 }
 
