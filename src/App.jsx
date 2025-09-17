@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import './App.css'
 import RenderCanvas from './components/3DCanvas'
 
@@ -24,12 +24,15 @@ function App() {
     <main>
       <nav>
         <ul className='flexRow'>
-          <li><h1>Netra Hun</h1></li>
-          <li><button id='themeButton' className='moon' onClick={themeHandler}></button></li>
+          <li><h1 id='h1name'>Netra Hun</h1></li>
+          <li>
+            <button aria-label='theme switcher' id='themeButton' className='moon' onClick={themeHandler}>
+            </button>
+          </li>
         </ul>
       </nav>
 
-      <RenderCanvas/>
+      <RenderCanvas />
     </main>
   )
 }
