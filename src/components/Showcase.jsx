@@ -10,13 +10,20 @@ export function Showcase() {
     let [isHovering, setHovering] = useState(false)
 
     let variants = {
-        appear:{
-            opacity: 1,
-            y: 0
+        start:{
+            opacity:0,
+            y: 32
         },
+        appear: (index)=>({
+            opacity: 1,
+            y: 0,
+            transition:{
+                delay: .25 * index
+            }
+        }),
         disappear:{
             opacity: 0,
-            y: -128
+            y: -32
         }
     }
 
@@ -24,15 +31,19 @@ export function Showcase() {
         <motion.div 
             variants={variants} 
             key={index} 
-            initial={{opacity:0, y: 128}} 
-            animate={"appear"} exit={"disappear"} 
-            transition={anticip_2s}
+            initial="start"
+            whileInView="appear"
+            exit="disappear"
+            viewport={{ once: true }}
+            transition={anticip_1s}
+            custom={index}
+            
         >
             <Link
                 className='showcaseItem'
                 to={item.project_path}
             >
-                {item.project_type == 1 ? computerSvg : movieSvg}
+                <span>{item.project_type}</span>
                 {item.project_name}
             </Link>
         </motion.div>
@@ -41,6 +52,7 @@ export function Showcase() {
 
     return (
         <AnimatePresence>
+            <motion.h2 initial={{opacity: 0, y: 32}} animate={{opacity: 1, y:0}} transition={anticip_1s}>Projects</motion.h2>
             {showcaseItems}
         </AnimatePresence>
     )

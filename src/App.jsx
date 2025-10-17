@@ -98,16 +98,13 @@ function App() {
       </motion.header>
 
       <main>
+        <RenderCanvas />
+          
         <motion.section id='showcase' className='flexCol' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={cubicBez_1s}>
-          {/* <RenderCanvas /> */}
-
-          <motion.h2 initial={{opacity: 0, y: 128}} animate={{opacity: 1, y:0}} transition={anticip_1s}>Projects</motion.h2>
           <Showcase />
         </motion.section>
 
         <section id='about' className='flexRow'>
-          
-          <div className='flexRow'>
             <div id='skills'>
             <h2>Skills</h2>
             <ul>
@@ -123,13 +120,15 @@ function App() {
           <div id='tools'>
             <h2>Tools</h2>
             <ul>
-              <li>Adobe Photoshop / Illustrator / Premiere Pro</li>
+              <li>Adobe Photoshop</li>
+              <li>Adobe Illustrator</li>
+              <li>Adobe Premiere Pro</li>
               <li>VS Code</li>
               <li>Blender</li>
               <li>Unity Engine</li>
               <li>Figma / Framer</li>
+              <li>n8n</li>
             </ul>
-          </div>
           </div>
           
           <div id='biography'>

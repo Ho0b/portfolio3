@@ -121,14 +121,8 @@ footer{
         list-style: none;
     }
 
-    & #biography{        
-        & h3{
+    & #biography, & #skills, & #tools{
         color: var(--secondary);
-        }
-
-        & p{
-            color: var(--secondary);
-        }
     }
 }
 
@@ -153,23 +147,17 @@ footer{
         font-size: 2rem;
         transition: color 1s, border 3s, background-color 1s;
 
-        & svg{
-            fill: var(--secondary);
+        & span{
             width: 0;
             height: 0;
             transform: scale(0);
             transition: transform .25s, width .25s, height .25s;
         }
 
-        & .itemTypeIcon{
-            width: 2rem;
-            height: 2rem;
-        }
-
         &:hover{
-            & svg{
-                width: 32px;
-                height: 32px;
+            & span{
+                width: 2rem;
+                height: 2rem;
                 transform: scale(1);
             }
         }
@@ -541,10 +529,14 @@ footer{
 
     #showcase{
         margin-inline: auto;
-        width: fit-content;
+        width: 90%;
 
         & .showcaseItem{
             font-size: 3rem;
+
+            & span {
+                font-size: 3rem;
+            }
         }
     }
 
@@ -554,7 +546,11 @@ footer{
     }
 
     #about{
-        & #biography, & #skills, & #tools{
+        & #skills, & #tools{
+            max-width: 50%;
+        }
+
+        & #biography{
             max-width: 33%;
         }
     }
