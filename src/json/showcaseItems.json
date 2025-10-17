@@ -1,0 +1,19 @@
+{
+    "projects": [
+        {
+        "project_name": "Dragon Quest Index", 
+        "project_path": "/projects/DragonIndex", 
+        "project_type": 1
+        },
+        {
+        "project_name": "It Comes For Us All", 
+        "project_path": "/projects/film1", 
+        "project_type": 2
+        },
+        {
+        "project_name": "Widener Esports", 
+        "project_path": "/projects/branding1", 
+        "project_type": 3
+        }
+    ]
+}

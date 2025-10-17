@@ -18,25 +18,18 @@ function RenderCanvas() {
                 }
         )
         return(
-            <mesh ref={obj1} onClick={(e)=>{setClick(!isClicked)}}>
+            <mesh ref={obj1} onClick={()=>{setClick(!isClicked)}}>
                 <boxGeometry args={[1, 1, 1]}/>
-                <meshStandardMaterial color={isClicked ? "yellow" : "purple"}/>
+                <meshStandardMaterial color={isClicked ? "#121212" : "#eee"}/>
             </mesh>
         )
     }
 
     return (
         <Canvas>
-            
-
             <ambientLight color={"white"} intensity={1}/>
             <directionalLight color={"white"} position={[3, 2, 0]}/>
             <MakeBox></MakeBox>
-
-            <mesh position={[0, -1, 0]}>
-                <boxGeometry args={[10,.05,10]}/>
-                <meshStandardMaterial color={"grey"}/>
-            </mesh>
         </Canvas>
     )
 }
