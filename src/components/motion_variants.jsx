@@ -1,21 +1,27 @@
-export const varients = {
-    "start":{
+import { stagger } from "motion"
+
+export const container_variants = {
+    hide:{
         opacity: 0,
         y: 32
     },
-    "disappear":{
+    show:{
+        opacity: 1,
+        y: 0,
+        transition:{
+            delayChildren: stagger(.25)
+        }
+    }
+}
+
+export const item_variants = {
+    hide:{
         opacity: 0,
-        y: -32
+        y: 32
     },
-    "fade_in":{
+    show:{
         opacity: 1,
         y: 0
-    },
-    delay_appear: (index) => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                delay: .5 * index
-            }
-    }),
+    }
 }
+
