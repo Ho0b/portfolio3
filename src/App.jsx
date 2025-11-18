@@ -16,6 +16,7 @@ import {
 import { Heading } from "./pageComponents/headingNav";
 import { leftArrow, rightArrow } from "./components/svgs";
 import Showcase from "./pageComponents/showcase";
+import Contact from "./pageComponents/contact";
 
 function App() {
   let isDark = useRef(true);
@@ -26,7 +27,7 @@ function App() {
       
       <Showcase/>
 
-      
+      <Contact/>
     </>
   );
 }
