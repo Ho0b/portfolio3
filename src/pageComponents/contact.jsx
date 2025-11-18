@@ -9,7 +9,7 @@ export default function Contact(){
     return(
         <motion.section id="contact">
 
-            <motion.div>
+            <motion.div id="contact_cta">
                 <span>Let's</span>
                 <span>Start</span>
                 <span>Something!</span>
@@ -17,30 +17,37 @@ export default function Contact(){
 
             <motion.div id="formContainer">
                 <form onSubmit={e=>formHandler(e)}>
-                    <div>
+                    <div className="form_group">
                         <label htmlFor="form_name">
                         Name
                         </label>
                         <input type="text" name="name" id="form_name" autoComplete="off"/>
                     </div>
                     
-                    <div>
+                    <div className="form_group">
                         <label htmlFor="form_email">
                         Email
                         </label>
                         <input type="email" name="email" id="form_email" autoComplete="off"/>
                     </div>
 
-                    <div>
+                    <div className="form_group">
                         <label htmlFor="form_message">
                         Message
                         </label>
                         <textarea type="message" name="message" id="form_message" autoComplete="off"></textarea>
                     </div>
 
-                    <div>
-                        <div id="socials"></div>
-                        <button type="submit"></button>
+                    <div className="form_group flex_row">
+                        <ul id="form_socials">
+                            <li>Indeed</li>
+                            <li>Github</li>
+                            <li>Youtube</li>
+                            <li>Email</li>
+                        </ul>
+                        <div id="buttonContainer">
+                        <button type="submit">Submit</button>
+                        </div>
                     </div>
                     
                 </form>

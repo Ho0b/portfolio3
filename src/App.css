@@ -3,6 +3,12 @@
     --font2: "Poppins", sans-serif;
     --font3: "Ovo", serif;
 
+    --fsize_small: 6px;
+    --fsize_medium: 12px;
+    --fsize_big: 24px;
+    --fsize_huge: 32px;
+    --fsize_chungus: 48px;
+
     --primary: #020202;
     --secondary: #EEEEEE;
     --accent: #C5E50C;
@@ -40,16 +46,22 @@ h2{
 header{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
     position: sticky;
     top: 0;
 
-    height: 48px;
+    height: 24px;
+
+    z-index: 100;
+
+    padding: 16px;
+
 
     & a{
         height: fit-content;
+        font-size: var(--fsize_medium);
     }
 }
 
@@ -106,85 +118,123 @@ footer{
 
         & li{
             text-decoration: none;
+
+            font-size: var(--fsize_medium);
         }
     }
 
     & #projectsDisplay{
         gap: 8px;
         overflow-x: hidden;
-        overflow-y: hidden;
+        overflow-y: scroll;
         scrollbar-width: none;
+
+        display: flex;
+        flex-direction: column;
 
         padding: 8px;
 
         scroll-behavior: smooth;
-        scroll-snap-type: inline;
-        scroll-snap-align: center;
-
-        & #active{
-            filter: opacity(1);
-            color: var(--secondary);
-            box-shadow: 0 0px 8px rgba(255,255,255, .25);
-        }
 
         & .projectCard{
             aspect-ratio: 16/9;
             min-width: 95%;
             max-height: 768px;
-            background-color: var(--unfocused);
+            background-color: var(--focused);
             border-radius: 16px;
             padding: 8px;
-            color: var(--unfocused);
-
-            filter: opacity(.5);
+            color: var(--secondary);
 
             transition: filter .5s, color .5s ease-in-out;
-        }
-    }
-
-    & #projectScroller{
-        width: fit-content;
-        margin-inline: auto;
         
-        & button{
-            margin-inline: 8px;
-            border: none;
-            border-radius: 50%;
-            padding: 0;
-
-            width: 48px;
-            height: 48px;
-
-            background-color: var(--unfocused);
-
-            transition: background-color .25s ease-in-out;
-
-            &:hover{
-                background-color: var(--focused);
-
-                & #scrollSvg{
-                    fill:var(--secondary)
-                }
+            & h1{
+                font-size: var(--fsize_chungus);
+                margin: 0;
             }
-
-            &:active{
-                background-color: var(--focused);
-
-                & #scrollSvg{
-                    fill:var(--secondary)
-                }
-            }
-
-            & #scrollSvg{
-                fill: var(--accent);
+            & p{
+                font-size: var(--fsize_medium);
             }
         }
     }
+
 }
 
 
 #contact{
-    
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    & #contact_cta{
+        height: 50%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 8px;
+
+        & span{
+            font-size: var(--fsize_huge);
+            font-weight: 1000;
+        }
+
+    }
+
+    & #formContainer{
+        height: 50%;
+        padding: 8px;
+
+        & form{
+
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            & .form_group{
+                background-color: green;
+                padding: 8px;
+                border-radius: 16px;
+            }
+
+            & #buttonContainer{
+                width: 50%;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+
+                & button{
+                    font-family: var(--font2);
+                    font-size: var(--fsize_medium);
+                    font-weight: 500;
+                    color: var(--primary);
+
+                    padding: 16px;
+                    border: 0px solid transparent;
+                    border-radius: 16px;
+                    background-color: var(--accent);
+                }
+            }
+            
+            
+            & #form_socials{
+                width: 50%;
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+
+                & li{
+                    font-size: var(--fsize_medium);
+                }
+            }
+        }
+
+    }
 }
 
 

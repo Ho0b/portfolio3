@@ -28,11 +28,14 @@ export const item_variants = {
 export const item_fadeIn_1s = {
     hide:{
         opacity: 0,
-        x: 32
+        y: 32
     },
     show:{
         opacity: 1,
-        x: 0
+        y: 0,
+        transition:{
+            duration: 3
+        }
     }
 }
 
@@ -43,7 +46,10 @@ export const item_popIn_1s = {
     },
     show:{
         opacity: 1,
-        scale: 1
+        scale: 1,
+        transition:{
+            duration: 1
+        }
     }
 }
 
