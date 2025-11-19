@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #000;
-        stroke-width: 0px;
-      }
-    </style>
-  </defs>
-  <path id="youtube" class="cls-1" d="M128,0C57.31,0,0,57.31,0,128s57.31,128,128,128,128-57.31,128-128S198.7,0,128,0ZM92.67,200.54V55.68l125.46,72.43-125.46,72.43Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <path class="cls-1" d="M128,0C57.31,0,0,57.31,0,128s57.31,128,128,128,128-57.31,128-128S198.7,0,128,0ZM92.67,200.54V55.68l125.46,72.43-125.46,72.43Z"/>
 </svg>

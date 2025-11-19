@@ -8,6 +8,7 @@
     --fsize_big: 24px;
     --fsize_huge: 32px;
     --fsize_chungus: 48px;
+    --fsize_gigachungus: 64px;
 
     --primary: #020202;
     --secondary: #EEEEEE;
@@ -85,7 +86,21 @@ canvas {
     height: 100vh;
 }
 
-footer {}
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    font-size: var(--fsize_medium);
+
+    & svg{
+        fill: var(--accent);
+        height: var(--fsize_medium);
+    }
+
+}
 
 /* 
     ID - ID - ID - ID - ID - ID - ID
@@ -135,6 +150,9 @@ footer {}
 
         & #active {
             background-color: var(--focused);
+            color: var(--secondary);
+
+            filter: opacity(1);
         }
 
         & .projectCard {
@@ -142,9 +160,11 @@ footer {}
             min-width: 95%;
             max-height: 768px;
             background-color: var(--unfocused);
+            color: var(--secondary);
             border-radius: 16px;
             padding: 8px;
-            color: var(--secondary);
+
+            filter: opacity(.1);
 
             transition: filter .5s, color .5s ease-in-out;
 
@@ -163,8 +183,8 @@ footer {}
 
 
 #contact {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: fit-content;
+    /* height: 100vh; */
 
     display: flex;
     flex-direction: column;
@@ -177,9 +197,11 @@ footer {}
         align-items: start;
         justify-content: center;
         padding: 8px;
+        margin-block: 10%;
 
         & span {
-            font-size: var(--fsize_huge);
+            font-family: var(--font3);
+            font-size: var(--fsize_chungus);
             font-weight: 1000;
         }
 
@@ -187,6 +209,7 @@ footer {}
 
     & #formContainer {
         height: 50%;
+        margin-block: 10%;
 
         & form {
             padding: 8px;
@@ -197,12 +220,19 @@ footer {}
             & label{
                 display: block;
                 margin-bottom: 8px;
+
+                font-size: var(--fsize_medium);
+            }
+
+            & textarea{
+                line-height: 2ch;
             }
 
             & input, & textarea{
                 background-color: var(--unfocused);
 
-                width: 100%;
+                inline-size: 100%;
+                max-width: 100%;
                 border: 0px solid transparent;
                 border-radius: 16px;
                 padding: 16px;
@@ -212,6 +242,10 @@ footer {}
                 outline: none;
 
                 transition: background-color .1s ease-in-out;
+
+                font-family: var(--font1);
+                font-size: 16px;
+                font-weight: 600;
 
                 &:focus{
                     background-color: var(--focused);
@@ -229,7 +263,9 @@ footer {}
                 flex-direction: row;
                 justify-content: end;
 
-                & button {
+                & button[type="submit"] {
+                    height: min-content;
+
                     font-family: var(--font2);
                     font-size: var(--fsize_medium);
                     font-weight: 500;
@@ -244,6 +280,7 @@ footer {}
 
 
             & #form_socials {
+                margin: 0;
                 width: 50%;
                 list-style: none;
                 padding: 0;
@@ -251,8 +288,20 @@ footer {}
                 flex-direction: row;
                 gap: 8px;
 
+                & svg {
+                    display: block;
+                    margin-inline: auto;
+                    height: var(--fsize_big);
+                    aspect-ratio: 1/1;
+                    fill: var(--accent);
+                }
+
                 & li {
                     font-size: var(--fsize_medium);
+
+                    & text{
+                        margin-top: auto;
+                    }
                 }
             }
         }
@@ -269,9 +318,26 @@ footer {}
     CLASSES - CLASSES - CLASSES - CLASSES - CLASSES - CLASSES - CLASSES
 */
 
+.just_between{
+    justify-content: space-between;
+}
+
 .flex_row {
     display: flex;
     flex-direction: row;
+}
+
+.goBackUp{
+    display: block;
+    margin-inline: auto;
+    border: none;
+    background-color: var(--unfocused);
+
+    & svg{
+        height: fit-content;
+        width: 32px;
+        fill: var(--accent);
+    }
 }
 
 /* 
@@ -290,8 +356,7 @@ footer {}
     #contact {
         & #contact_cta {
             & span {
-                font-family: var(--font3);
-                font-size: var(--fsize_chungus);
+                font-size: var(--fsize_gigachungus);
             }
         }
     }

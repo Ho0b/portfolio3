@@ -1,4 +1,5 @@
 import { motion } from "motion/react"
+import { emailIcon, githubIcon, linkedinIcon, youtubeIcon } from "../components/svgs"
 
 export default function Contact(){
 
@@ -40,13 +41,13 @@ export default function Contact(){
 
                     <div className="form_group flex_row">
                         <ul id="form_socials">
-                            <li>Indeed</li>
-                            <li>Github</li>
-                            <li>Youtube</li>
-                            <li>Email</li>
+                            <li>{linkedinIcon}Indeed</li>
+                            <li>{githubIcon}Github</li>
+                            <li>{youtubeIcon}Youtube</li>
+                            <li>{emailIcon}Email</li>
                         </ul>
                         <div id="buttonContainer">
-                        <button type="submit">Submit</button>
+                        <button type="submit">Send</button>
                         </div>
                     </div>
                     
