@@ -21,14 +21,18 @@
     scrollbar-width: none;
 
     font-family: var(--font2);
+
+    scroll-behavior: smooth;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--secondary);
+
+    cursor: pointer;
 }
 
-.light{
+.light {
     --primary: #eee;
     --secondary: #121212;
     --focused: #202020;
@@ -36,14 +40,11 @@ a{
     color-scheme: light dark;
 }
 
-h1{
+h1 {}
 
-}
-h2{
+h2 {}
 
-}
-
-header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -59,15 +60,15 @@ header{
     padding: 16px;
 
 
-    & a{
+    & a {
         height: fit-content;
         font-size: var(--fsize_medium);
     }
 }
 
-body{
-    background: 
-    radial-gradient(ellipse at center, rgba(5,5,5, .5), var(--primary) );
+body {
+    background:
+        radial-gradient(ellipse at center, rgba(5, 5, 5, .5), var(--primary));
     background-size: 200% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -78,17 +79,13 @@ body{
     margin: 0;
 }
 
-main{
+main {}
 
-}
-
-canvas{
+canvas {
     height: 100vh;
 }
 
-footer{
-    
-}
+footer {}
 
 /* 
     ID - ID - ID - ID - ID - ID - ID
@@ -98,7 +95,7 @@ footer{
     ID - ID - ID - ID - ID - ID - ID
 */
 
-#showcaseContainer{
+#showcaseContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +103,7 @@ footer{
     height: 100vh;
     gap: 16px;
 
-    & #projectsSelector{
+    & #projectsSelector {
         list-style: none;
 
         display: flex;
@@ -116,14 +113,14 @@ footer{
         padding: 0;
         margin-inline: 16px;
 
-        & li{
+        & li {
             text-decoration: none;
 
             font-size: var(--fsize_medium);
         }
     }
 
-    & #projectsDisplay{
+    & #projectsDisplay {
         gap: 8px;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -136,22 +133,27 @@ footer{
 
         scroll-behavior: smooth;
 
-        & .projectCard{
+        & #active {
+            background-color: var(--focused);
+        }
+
+        & .projectCard {
             aspect-ratio: 16/9;
             min-width: 95%;
             max-height: 768px;
-            background-color: var(--focused);
+            background-color: var(--unfocused);
             border-radius: 16px;
             padding: 8px;
             color: var(--secondary);
 
             transition: filter .5s, color .5s ease-in-out;
-        
-            & h1{
+
+            & h1 {
                 font-size: var(--fsize_chungus);
                 margin: 0;
             }
-            & p{
+
+            & p {
                 font-size: var(--fsize_medium);
             }
         }
@@ -160,14 +162,14 @@ footer{
 }
 
 
-#contact{
-
+#contact {
+    min-height: 100vh;
     height: 100vh;
 
     display: flex;
     flex-direction: column;
 
-    & #contact_cta{
+    & #contact_cta {
         height: 50%;
 
         display: flex;
@@ -176,37 +178,58 @@ footer{
         justify-content: center;
         padding: 8px;
 
-        & span{
+        & span {
             font-size: var(--fsize_huge);
             font-weight: 1000;
         }
 
     }
 
-    & #formContainer{
+    & #formContainer {
         height: 50%;
-        padding: 8px;
 
-        & form{
-
+        & form {
+            padding: 8px;
             display: flex;
             flex-direction: column;
             gap: 8px;
 
-            & .form_group{
-                background-color: green;
-                padding: 8px;
-                border-radius: 16px;
+            & label{
+                display: block;
+                margin-bottom: 8px;
             }
 
-            & #buttonContainer{
+            & input, & textarea{
+                background-color: var(--unfocused);
+
+                width: 100%;
+                border: 0px solid transparent;
+                border-radius: 16px;
+                padding: 16px;
+
+                box-sizing: border-box;
+
+                outline: none;
+
+                transition: background-color .1s ease-in-out;
+
+                &:focus{
+                    background-color: var(--focused);
+                }
+               
+            }
+
+            & .form_group {
+            }
+
+            & #buttonContainer {
                 width: 50%;
 
                 display: flex;
                 flex-direction: row;
                 justify-content: end;
 
-                & button{
+                & button {
                     font-family: var(--font2);
                     font-size: var(--fsize_medium);
                     font-weight: 500;
@@ -218,9 +241,9 @@ footer{
                     background-color: var(--accent);
                 }
             }
-            
-            
-            & #form_socials{
+
+
+            & #form_socials {
                 width: 50%;
                 list-style: none;
                 padding: 0;
@@ -228,7 +251,7 @@ footer{
                 flex-direction: row;
                 gap: 8px;
 
-                & li{
+                & li {
                     font-size: var(--fsize_medium);
                 }
             }
@@ -246,7 +269,7 @@ footer{
     CLASSES - CLASSES - CLASSES - CLASSES - CLASSES - CLASSES - CLASSES
 */
 
-.flex_row{
+.flex_row {
     display: flex;
     flex-direction: row;
 }
@@ -259,18 +282,21 @@ footer{
     MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES
 */
 
-@media only screen and (min-width: 540px){
+@media only screen and (min-width: 540px) {}
+
+@media only screen and (max-width: 370px) {}
+
+@media only screen and (min-width: 810px) {
+    #contact {
+        & #contact_cta {
+            & span {
+                font-family: var(--font3);
+                font-size: var(--fsize_chungus);
+            }
+        }
+    }
+
 
 }
 
-@media only screen and (max-width: 370px){
-
-}
-
-@media only screen and (min-width: 810px){
-
-}
-
-@media only screen and (min-height: 810px) and (min-width: 540px) {
-
-}
+@media only screen and (min-height: 810px) and (min-width: 540px) {}

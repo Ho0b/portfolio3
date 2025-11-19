@@ -2,15 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import { leftArrow, rightArrow } from "../components/svgs";
 import { motion } from "motion/react"
 import { container_variants, item_fadeIn_1s, item_popIn_1s, item_variants } from "../components/motion_variants";
+import { inView } from "motion";
 
 export default function Showcase() {
 
   let [activeCard, setActiveCard] = useState(0)
   let projectList = useRef()
-  let projectCardOffset = useRef()
-  let listLength = useRef()
+  let activeItem = useRef()
 
   const projectTypes = ["Websites", "Games", "3D", "Films", "Photography"]
+
+  inView("#active", (ele)=>{console.log(ele)})
 
   return (
     <motion.section
@@ -43,6 +45,7 @@ export default function Showcase() {
           (
             <motion.div
               key={index}
+              ref={activeItem}
               className="projectCard"
               id={index == activeCard ? "active" : ""}
               variants={item_fadeIn_1s}

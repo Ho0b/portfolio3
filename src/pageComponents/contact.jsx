@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 export default function Contact(){
 
     function formHandler(e){
-        e.preventDefaults()
+        e.preventDefault()
     }
 
     return(
