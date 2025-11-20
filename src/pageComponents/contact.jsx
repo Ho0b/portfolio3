@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
 import { emailIcon, githubIcon, linkedinIcon, youtubeIcon } from "../components/svgs"
+import { container_variants, item_fadeIn_1s, item_popIn_1s } from "../components/motion_variants"
 
 export default function Contact(){
 
@@ -8,51 +9,50 @@ export default function Contact(){
     }
 
     return(
-        <motion.section id="contact">
+        <motion.section id="contact" variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
 
-            <motion.div id="contact_cta">
-                <span>Let's</span>
-                <span>Start</span>
-                <span>Something!</span>
+            <motion.div id="contact_cta" variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
+                <motion.span variants={item_fadeIn_1s}>Let's</motion.span>
+                <motion.span variants={item_fadeIn_1s}>Start</motion.span>
+                <motion.span variants={item_fadeIn_1s}>Something!</motion.span>
             </motion.div>
 
-            <motion.div id="formContainer">
-                <form onSubmit={e=>formHandler(e)}>
-                    <div className="form_group">
-                        <label htmlFor="form_name">
-                        Name
-                        </label>
-                        <input type="text" name="name" id="form_name" autoComplete="off"/>
-                    </div>
-                    
-                    <div className="form_group">
-                        <label htmlFor="form_email">
-                        Email
-                        </label>
-                        <input type="email" name="email" id="form_email" autoComplete="off"/>
-                    </div>
+            <motion.form id="formContainer" onSubmit={e=>formHandler(e)} variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
+                <motion.div className="form_group" variants={item_fadeIn_1s}>
+                    <label htmlFor="form_name">
+                    Name
+                    </label>
+                    <input type="text" name="name" id="form_name" required autoComplete="off"/>
+                </motion.div>
+                
+                <motion.div className="form_group" variants={item_fadeIn_1s}>
+                    <label htmlFor="form_email">
+                    Email
+                    </label>
+                    <input type="email" name="email" id="form_email" required autoComplete="off"/>
+                </motion.div>
 
-                    <div className="form_group">
-                        <label htmlFor="form_message">
-                        Message
-                        </label>
-                        <textarea type="message" name="message" id="form_message" autoComplete="off"></textarea>
-                    </div>
+                <motion.div className="form_group" variants={item_fadeIn_1s}>
+                    <label htmlFor="form_message">
+                    Message
+                    </label>
+                    <textarea type="message" name="message" id="form_message" required autoComplete="off"></textarea>
+                </motion.div>
 
-                    <div className="form_group flex_row">
-                        <ul id="form_socials">
-                            <li>{linkedinIcon}Indeed</li>
-                            <li>{githubIcon}Github</li>
-                            <li>{youtubeIcon}Youtube</li>
-                            <li>{emailIcon}Email</li>
-                        </ul>
-                        <div id="buttonContainer">
-                        <button type="submit">Send</button>
-                        </div>
-                    </div>
+                <motion.div className="form_group flex_row" variants={item_fadeIn_1s}>
+                    <motion.ul id="form_socials" variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
+                        <motion.li variants={item_fadeIn_1s}>{linkedinIcon}Indeed</motion.li>
+                        <motion.li variants={item_fadeIn_1s}>{githubIcon}Github</motion.li>
+                        <motion.li variants={item_fadeIn_1s}>{youtubeIcon}Youtube</motion.li>
+                        <motion.li variants={item_fadeIn_1s}>{emailIcon}Email</motion.li>
+                    </motion.ul>
                     
-                </form>
-            </motion.div>
+                    <motion.div id="buttonContainer" variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
+                        <motion.button type="submit" variants={item_fadeIn_1s}>Send</motion.button>
+                    </motion.div>
+                </motion.div>
+                
+            </motion.form>
 
         </motion.section>
     )

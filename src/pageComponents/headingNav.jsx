@@ -17,7 +17,7 @@ export function Heading(){
                 <Link to="/info">Info</Link>
             </motion.div>
             <motion.div variants={item_variants}>
-                <a  onClick={()=>{document.getElementById("contact").scrollIntoView()}}>Contact</a>
+                <button type="button" onClick={()=>{document.getElementById("contact").scrollIntoView()}}>Contact</button>
             </motion.div>
         </motion.header>
 

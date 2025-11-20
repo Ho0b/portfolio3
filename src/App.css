@@ -95,7 +95,7 @@ footer {
 
     font-size: var(--fsize_medium);
 
-    & svg{
+    & svg {
         fill: var(--accent);
         height: var(--fsize_medium);
     }
@@ -207,106 +207,108 @@ footer {
 
     }
 
-    & #formContainer {
+    & form {
         height: 50%;
         margin-block: 10%;
 
-        & form {
-            padding: 8px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        & label {
+            display: block;
+            margin-bottom: 8px;
+
+            font-size: var(--fsize_medium);
+        }
+
+        & textarea {
+            line-height: 2ch;
+
+        }
+
+        & input,
+        & textarea {
+            background-color: var(--unfocused);
+
+            inline-size: 100%;
+            max-width: 100%;
+            border: 0px solid transparent;
+            border-radius: 16px;
+            padding: 16px;
+
+            box-sizing: border-box;
+
+            transition: background-color .25s ease-in-out;
+
+            font-family: var(--font1);
+            font-size: 16px;
+            font-weight: 600;
+
+            &:focus {
+                background-color: var(--focused);
+                outline: 1px solid var(--accent);
+            }
+
+        }
+
+        & .form_group {}
+
+        & #buttonContainer {
+            width: 50%;
+
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            flex-direction: row;
+            justify-content: end;
 
-            & label{
-                display: block;
-                margin-bottom: 8px;
+            & button[type="submit"] {
+                height: min-content;
 
+                font-family: var(--font2);
                 font-size: var(--fsize_medium);
-            }
+                font-weight: 500;
+                color: var(--primary);
 
-            & textarea{
-                line-height: 2ch;
-            }
-
-            & input, & textarea{
-                background-color: var(--unfocused);
-
-                inline-size: 100%;
-                max-width: 100%;
+                padding: 16px;
                 border: 0px solid transparent;
                 border-radius: 16px;
-                padding: 16px;
-
-                box-sizing: border-box;
-
-                outline: none;
-
-                transition: background-color .1s ease-in-out;
-
-                font-family: var(--font1);
-                font-size: 16px;
-                font-weight: 600;
+                background-color: var(--accent);
 
                 &:focus{
-                    background-color: var(--focused);
-                }
-               
-            }
-
-            & .form_group {
-            }
-
-            & #buttonContainer {
-                width: 50%;
-
-                display: flex;
-                flex-direction: row;
-                justify-content: end;
-
-                & button[type="submit"] {
-                    height: min-content;
-
-                    font-family: var(--font2);
-                    font-size: var(--fsize_medium);
-                    font-weight: 500;
-                    color: var(--primary);
-
-                    padding: 16px;
-                    border: 0px solid transparent;
-                    border-radius: 16px;
-                    background-color: var(--accent);
-                }
-            }
-
-
-            & #form_socials {
-                margin: 0;
-                width: 50%;
-                list-style: none;
-                padding: 0;
-                display: flex;
-                flex-direction: row;
-                gap: 8px;
-
-                & svg {
-                    display: block;
-                    margin-inline: auto;
-                    height: var(--fsize_big);
-                    aspect-ratio: 1/1;
-                    fill: var(--accent);
-                }
-
-                & li {
-                    font-size: var(--fsize_medium);
-
-                    & text{
-                        margin-top: auto;
-                    }
+                    outline: 4px solid var(--secondary);
                 }
             }
         }
 
+
+        & #form_socials {
+            margin: 0;
+            width: 50%;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+
+            & svg {
+                display: block;
+                margin-inline: auto;
+                height: var(--fsize_big);
+                aspect-ratio: 1/1;
+                fill: var(--accent);
+            }
+
+            & li {
+                font-size: var(--fsize_medium);
+
+                & text {
+                    margin-top: auto;
+                }
+            }
+        }
     }
+
 }
 
 
@@ -318,7 +320,7 @@ footer {
     CLASSES - CLASSES - CLASSES - CLASSES - CLASSES - CLASSES - CLASSES
 */
 
-.just_between{
+.just_between {
     justify-content: space-between;
 }
 
@@ -327,13 +329,13 @@ footer {
     flex-direction: row;
 }
 
-.goBackUp{
+.goBackUp {
     display: block;
     margin-inline: auto;
     border: none;
-    background-color: var(--unfocused);
+    background-color: transparent;
 
-    & svg{
+    & svg {
         height: fit-content;
         width: 32px;
         fill: var(--accent);
