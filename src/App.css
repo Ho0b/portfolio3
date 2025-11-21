@@ -65,6 +65,14 @@ header {
         height: fit-content;
         font-size: var(--fsize_medium);
     }
+
+    & button{
+        background-color: transparent;
+        font-family: var(--font2);
+        border: none;
+
+        cursor: pointer;;
+    }
 }
 
 body {
@@ -230,11 +238,11 @@ footer {
 
         & input,
         & textarea {
-            background-color: var(--unfocused);
+            background-color: transparent;
 
             inline-size: 100%;
             max-width: 100%;
-            border: 0px solid transparent;
+            border: 1px solid var(--secondary);
             border-radius: 16px;
             padding: 16px;
 
@@ -248,6 +256,7 @@ footer {
 
             &:focus {
                 background-color: var(--focused);
+                border: 0px solid transparent;
                 outline: 1px solid var(--accent);
             }
 
@@ -356,7 +365,20 @@ footer {
 
 @media only screen and (min-width: 810px) {
     #contact {
+        flex-direction: row;
+
+
+        & form{
+            height: 100%;
+            width: 50%;
+            max-width: 720px;
+            margin: auto;
+        }
+
         & #contact_cta {
+            height: 100%;
+            width: 50%;
+
             & span {
                 font-size: var(--fsize_gigachungus);
             }

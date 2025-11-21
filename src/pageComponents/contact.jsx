@@ -41,10 +41,10 @@ export default function Contact(){
 
                 <motion.div className="form_group flex_row" variants={item_fadeIn_1s}>
                     <motion.ul id="form_socials" variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
-                        <motion.li variants={item_fadeIn_1s}>{linkedinIcon}Indeed</motion.li>
-                        <motion.li variants={item_fadeIn_1s}>{githubIcon}Github</motion.li>
-                        <motion.li variants={item_fadeIn_1s}>{youtubeIcon}Youtube</motion.li>
-                        <motion.li variants={item_fadeIn_1s}>{emailIcon}Email</motion.li>
+                        <motion.li variants={item_fadeIn_1s}><a href="https://www.linkedin.com/in/nhun/" target="_blank">{linkedinIcon}Indeed</a></motion.li>
+                        <motion.li variants={item_fadeIn_1s}><a href="https://github.com/Ho0b" target="_blank">{githubIcon}Github</a></motion.li>
+                        <motion.li variants={item_fadeIn_1s}><a href="https://www.youtube.com/@netrahun" target="_blank">{youtubeIcon}Youtube</a></motion.li>
+                        <motion.li variants={item_fadeIn_1s}><a href="mailto:">{emailIcon}Email</a></motion.li>
                     </motion.ul>
                     
                     <motion.div id="buttonContainer" variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
