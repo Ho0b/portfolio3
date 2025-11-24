@@ -14,7 +14,7 @@ export default function Contact(){
             <motion.div id="contact_cta" variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>
                 <motion.span variants={item_fadeIn_1s}>Let's</motion.span>
                 <motion.span variants={item_fadeIn_1s}>Start</motion.span>
-                <motion.span variants={item_fadeIn_1s}>Something!</motion.span>
+                <motion.span variants={item_fadeIn_1s}>Talking!</motion.span>
             </motion.div>
 
             <motion.form id="formContainer" onSubmit={e=>formHandler(e)} variants={container_variants} initial="hide" whileInView="show" viewport={{once: true}}>

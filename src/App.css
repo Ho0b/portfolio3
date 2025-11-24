@@ -118,6 +118,20 @@ footer {
     ID - ID - ID - ID - ID - ID - ID
 */
 
+#loadAnimation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    & p{
+        font-family: var(--font3);
+        color: var(--secondary);
+    }
+    
+}
+
 #showcaseContainer {
     display: flex;
     flex-direction: column;
