@@ -47,7 +47,6 @@ export default function Showcase() {
               key={index}
               ref={activeItem}
               className="projectCard"
-              id={index == activeCard ? "active" : ""}
               variants={item_fadeIn_1s}
             >
               <motion.h1 variants={item_variants} >title</motion.h1>

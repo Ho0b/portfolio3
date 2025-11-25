@@ -163,19 +163,13 @@ footer {
         overflow-y: scroll;
         scrollbar-width: none;
 
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
 
         padding: 8px;
 
         scroll-behavior: smooth;
-
-        & #active {
-            background-color: var(--focused);
-            color: var(--secondary);
-
-            filter: opacity(1);
-        }
 
         & .projectCard {
             aspect-ratio: 16/9;
@@ -185,10 +179,6 @@ footer {
             color: var(--secondary);
             border-radius: 16px;
             padding: 8px;
-
-            filter: opacity(.1);
-
-            transition: filter .5s, color .5s ease-in-out;
 
             & h1 {
                 font-size: var(--fsize_chungus);
@@ -219,11 +209,11 @@ footer {
         align-items: start;
         justify-content: center;
         padding: 8px;
-        margin-block: 10%;
+        margin-block: 10% 0;
 
         & span {
             font-family: var(--font3);
-            font-size: var(--fsize_chungus);
+            font-size: var(--fsize_gigachungus);
             font-weight: 1000;
         }
 
@@ -373,14 +363,45 @@ footer {
     MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES
 */
 
-@media only screen and (min-width: 540px) {}
+@media only screen and (max-width: 370px) {
 
-@media only screen and (max-width: 370px) {}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (min-width: 540px) {
+
+}
+
+@media only screen and (min-width: 720px) {
+
+    & #contact{
+
+        & #contact_cta{
+            flex-direction: row;
+            gap: 16px;
+            margin: 10% 0 0 0;
+        }
+    }
+
+
+    & #showcaseContainer{
+
+        & #projectsDisplay{
+            gap: 12px;
+
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
 
 @media only screen and (min-width: 810px) {
+
     #contact {
         flex-direction: row;
-
 
         & form{
             height: 100%;
@@ -393,6 +414,12 @@ footer {
             height: 100%;
             width: 50%;
 
+            gap: 8px;
+            flex-direction: column;
+            align-items: end;
+
+            margin-block: 10%;
+
             & span {
                 font-size: var(--fsize_gigachungus);
             }
@@ -402,4 +429,15 @@ footer {
 
 }
 
-@media only screen and (min-height: 810px) and (min-width: 540px) {}
+@media only screen and (min-width: 1280px){
+
+    & #showcaseContainer{
+
+        & #projectsDisplay{
+            gap: 16px;
+
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+}
